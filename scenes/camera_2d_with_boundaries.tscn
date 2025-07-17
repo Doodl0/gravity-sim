@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://mbmmang8wsqt"]
+
+[ext_resource type="Script" uid="uid://dyqok8tw7fjtg" path="res://scenes/camera_boundary.gd" id="1_bm88s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fvse4"]
+
+[node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("bottom_boundary", "top_boundary", "left_boundary", "right_boundary")]
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("1_bm88s")
+bottom_boundary = NodePath("StaticBody2D/Bottom CollisionShape2D")
+top_boundary = NodePath("StaticBody2D/Top CollisionShape2D")
+left_boundary = NodePath("StaticBody2D/Left CollisionShape2D")
+right_boundary = NodePath("StaticBody2D/Right CollisionShape2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Bottom CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1685)
+shape = SubResource("WorldBoundaryShape2D_fvse4")
+
+[node name="Top CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -1685)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_fvse4")
+
+[node name="Left CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2300, 0)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_fvse4")
+
+[node name="Right CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2300, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_fvse4")

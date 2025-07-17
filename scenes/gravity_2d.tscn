@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://beqbuy8yyy10y"]
+
+[ext_resource type="PackedScene" uid="uid://bgkos34co6f24" path="res://scenes/gravity_object_2d.tscn" id="1_1l28x"]
+[ext_resource type="PackedScene" uid="uid://mbmmang8wsqt" path="res://scenes/camera_2d_with_boundaries.tscn" id="1_fvse4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" parent="." instance=ExtResource("1_fvse4")]
+
+[node name="GravityObject2D2" parent="." instance=ExtResource("1_1l28x")]
+position = Vector2(406, -40)
+starting_velocity = Vector2(10, 0)
+
+[node name="GravityObject2D" parent="." instance=ExtResource("1_1l28x")]
+position = Vector2(2, 114)
+starting_velocity = Vector2(10, 0)

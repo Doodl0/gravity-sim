@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgkos34co6f24"]
+
+[ext_resource type="Script" uid="uid://c7v78w5s58nxs" path="res://scripts/gravity_object_2d.gd" id="1_i3ygp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mv12o"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y8nhw"]
+radius = 100.0
+
+[node name="GravityObject2D" type="CharacterBody2D" node_paths=PackedStringArray("collider1", "collider2")]
+disable_mode = 1
+motion_mode = 1
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+platform_floor_layers = 0
+script = ExtResource("1_i3ygp")
+collider1 = NodePath("CollisionShape2D")
+collider2 = NodePath("CollisionShape2D2")
+radius = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mv12o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+rotation = 0.1309
+shape = SubResource("CircleShape2D_y8nhw")
