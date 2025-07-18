@@ -7,10 +7,13 @@
 
 [node name="Camera2D" parent="." instance=ExtResource("1_fvse4")]
 
-[node name="GravityObject2D2" parent="." instance=ExtResource("1_1l28x")]
-position = Vector2(406, -40)
-starting_velocity = Vector2(10, 0)
+[node name="Gravity Objects" type="Node" parent="."]
 
-[node name="GravityObject2D" parent="." instance=ExtResource("1_1l28x")]
-position = Vector2(2, 114)
-starting_velocity = Vector2(10, 0)
+[node name="GravityObject2D2" parent="Gravity Objects" instance=ExtResource("1_1l28x")]
+radius = 200.0
+mass = 5.4e+17
+
+[node name="GravityObject2D" parent="Gravity Objects" instance=ExtResource("1_1l28x")]
+position = Vector2(73, -540)
+starting_velocity = Vector2(2000, 0)
+mass = 1.0
