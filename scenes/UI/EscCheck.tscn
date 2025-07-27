@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://c4pdg6gwmgunv" path="res://scripts/esc_check.gd" id="1_cs1rd"]
 
 [node name="EscCheck" type="Node"]
+process_mode = 3
 script = ExtResource("1_cs1rd")
