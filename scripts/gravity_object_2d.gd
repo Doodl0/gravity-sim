@@ -1,13 +1,13 @@
 class_name GravityObject2D extends CharacterBody2D
 
-const G: float = 6.6743e-11 
+const G: float = 100000 
 @export var camera: Camera2D;
 # Two colliders prevents colliders sticking to each other
 @export var collider1: CollisionShape2D;
 @export var collider2: CollisionShape2D;
 @export var starting_velocity: Vector2 = Vector2.ZERO;
-@export_range(1, 1000, 1, "suffix:px") var radius: float = 100;
-@export_range(1, 10e18, 10e15, "suffix:kg") var mass: float = 10e16;
+@export_range(1, 1000, 1, "suffix:px") var radius: int = 100;
+@export var mass: float = 100;
 # To text to draw with
 @export var label: String;
 
@@ -43,7 +43,6 @@ func _physics_process(delta: float) -> void:
 		var acc1 = gforce / self.mass
 		var acceleration = Vector2(acc1 * direction.x, acc1 * direction.y)
 		accelerate(acceleration)
-		print(acc1)
 	
 	var collision_info = move_and_collide(velocity * delta);
 	if collision_info:
@@ -53,5 +52,5 @@ func _physics_process(delta: float) -> void:
 func _draw():
 	# Draw a circle and text
 	draw_circle(Vector2.ZERO, radius, Color.WHITE)
-	draw_string(ThemeDB.fallback_font, Vector2(0, -100), label,
-				HORIZONTAL_ALIGNMENT_CENTER, 130, 55)
+	draw_string(ThemeDB.fallback_font, Vector2(0, -radius * 1.5), label,
+				HORIZONTAL_ALIGNMENT_CENTER, -1, 96)

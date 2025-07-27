@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnmlvp5cqdn1d"]
+
+[ext_resource type="Script" uid="uid://dblwm7b8ciggh" path="res://scripts/freecam.gd" id="1_ah6b6"]
+[ext_resource type="PackedScene" uid="uid://dmilooqpib1p6" path="res://scenes/3D/gravity_object_3d.tscn" id="1_m81wu"]
+
+[sub_resource type="Environment" id="Environment_acltk"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Gravity Scene 3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_acltk")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.11672, 0)
+keep_aspect = 0
+script = ExtResource("1_ah6b6")
+
+[node name="Gravity Objects" type="Node" parent="."]
+
+[node name="GravityObject3D" parent="Gravity Objects" instance=ExtResource("1_m81wu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.34)
+starting_velocity = Vector3(12, 0, 0)
+radius = 0.1
+mass = 1.0
+
+[node name="GravityObject3D3" parent="Gravity Objects" instance=ExtResource("1_m81wu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.875, 0)
+starting_velocity = Vector3(12, 0, 0)
+radius = 0.1
+mass = 1.0
+
+[node name="GravityObject3D2" parent="Gravity Objects" instance=ExtResource("1_m81wu")]
+mass = 1000.0

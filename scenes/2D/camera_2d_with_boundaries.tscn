@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://mbmmang8wsqt"]
 
-[ext_resource type="Script" uid="uid://dyqok8tw7fjtg" path="res://scenes/camera_boundary.gd" id="1_bm88s"]
+[ext_resource type="Script" uid="uid://dyqok8tw7fjtg" path="res://scripts/camera_boundary.gd" id="1_bm88s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fvse4"]
 
