@@ -1,14 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsh7m7w33iwto"]
+[gd_scene load_steps=10 format=3 uid="uid://bsh7m7w33iwto"]
 
 [ext_resource type="Texture2D" uid="uid://cyn00o0xckrw8" path="res://images/rounded_square.png" id="1_v1yl8"]
 [ext_resource type="Texture2D" uid="uid://psa6f6818bcy" path="res://images/pause.svg" id="2_ko6ek"]
 [ext_resource type="Texture2D" uid="uid://bi4mj4vvh0fax" path="res://images/play.svg" id="3_8cx3x"]
 [ext_resource type="Script" uid="uid://cxy135sn14wy1" path="res://scripts/pause_button.gd" id="4_8cx3x"]
 [ext_resource type="Script" uid="uid://covjlopo6pvn7" path="res://scripts/instantiate_object_2d.gd" id="5_lw2h8"]
+[ext_resource type="Script" uid="uid://pbf1rwu8xogk" path="res://scripts/toggle_camera_boundaries.gd" id="6_q2dr1"]
 
 [sub_resource type="Theme" id="Theme_8cx3x"]
 default_base_scale = 1.5
 default_font_size = 16
+
+[sub_resource type="Theme" id="Theme_lw2h8"]
+default_font_size = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lw2h8"]
 
 [node name="Scene2D UI" type="Control"]
 process_mode = 3
@@ -121,3 +127,26 @@ step = 250.0
 allow_greater = true
 allow_lesser = true
 prefix = "Velocity Y:"
+
+[node name="CameraBoundariesToggle" type="NinePatchRect" parent="."]
+layout_mode = 1
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 288.0
+offset_bottom = 96.0
+texture = ExtResource("1_v1yl8")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="CheckButton" type="CheckButton" parent="CameraBoundariesToggle"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 64.0
+theme = SubResource("Theme_lw2h8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lw2h8")
+button_pressed = true
+text = "World Boundaries around camera"
+autowrap_mode = 2
+script = ExtResource("6_q2dr1")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct2dbvt54qson"]
+
+[ext_resource type="PackedScene" uid="uid://cx7kpvvaljkyv" path="res://scenes/UI/EscCheck.tscn" id="1_n07b6"]
+[ext_resource type="PackedScene" uid="uid://bsh7m7w33iwto" path="res://scenes/UI/scene_2d_ui.tscn" id="1_pggbd"]
+[ext_resource type="PackedScene" uid="uid://mbmmang8wsqt" path="res://scenes/2D/camera_2d_with_boundaries.tscn" id="2_n07b6"]
+
+[node name="Gravity Scene 2D" type="Node2D"]
+
+[node name="EscCheck" parent="." instance=ExtResource("1_n07b6")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Scene2D UI" parent="UI" instance=ExtResource("1_pggbd")]
+
+[node name="Camera2D" parent="." instance=ExtResource("2_n07b6")]
+process_mode = 3
+zoom = Vector2(0.125, 0.125)
+
+[node name="GravityObjects" type="Node" parent="."]
+unique_name_in_owner = true
+process_mode = 1

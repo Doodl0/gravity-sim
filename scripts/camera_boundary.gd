@@ -1,4 +1,4 @@
-extends Camera2D
+class_name Camera2DWithBoundaries extends Camera2D
 
 # Get 4 world boundaries to place at camera borders
 @export var bottom_boundary: CollisionShape2D;
@@ -21,3 +21,6 @@ func _physics_process(delta: float) -> void:
 		top_boundary.position = Vector2(0, -positions.y) / zoom_factor;
 		left_boundary.position = Vector2(positions.x, 0) / zoom_factor;
 		right_boundary.position = Vector2(-positions.x, 0) / zoom_factor;
+		
+func toggle() -> void:
+	boundaries_disabled = !boundaries_disabled;

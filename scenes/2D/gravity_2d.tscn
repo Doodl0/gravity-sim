@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://beqbuy8yyy10y"]
+[gd_scene load_steps=5 format=3 uid="uid://beqbuy8yyy10y"]
 
 [ext_resource type="PackedScene" uid="uid://bgkos34co6f24" path="res://scenes/2D/gravity_object_2d.tscn" id="1_1l28x"]
 [ext_resource type="PackedScene" uid="uid://bsh7m7w33iwto" path="res://scenes/UI/scene_2d_ui.tscn" id="1_3sdr0"]
+[ext_resource type="PackedScene" uid="uid://cx7kpvvaljkyv" path="res://scenes/UI/EscCheck.tscn" id="1_fk1qw"]
 [ext_resource type="PackedScene" uid="uid://mbmmang8wsqt" path="res://scenes/2D/camera_2d_with_boundaries.tscn" id="1_fvse4"]
 
 [node name="Gravity Scene 2D" type="Node2D"]
+
+[node name="EscCheck" parent="." instance=ExtResource("1_fk1qw")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 3

@@ -1,20 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnmlvp5cqdn1d"]
+[gd_scene load_steps=5 format=3 uid="uid://cnmlvp5cqdn1d"]
 
 [ext_resource type="Script" uid="uid://dblwm7b8ciggh" path="res://scripts/freecam.gd" id="1_ah6b6"]
 [ext_resource type="PackedScene" uid="uid://dmilooqpib1p6" path="res://scenes/3D/gravity_object_3d.tscn" id="1_m81wu"]
+[ext_resource type="PackedScene" uid="uid://cx7kpvvaljkyv" path="res://scenes/UI/EscCheck.tscn" id="1_nl1s8"]
 
 [sub_resource type="Environment" id="Environment_acltk"]
-background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+tonemap_exposure = 1.15
 
 [node name="Gravity Scene 3D" type="Node3D"]
+
+[node name="EscCheck" parent="." instance=ExtResource("1_nl1s8")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_acltk")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.11672, 0)
+transform = Transform3D(1, 0, 0, 0, 0.897574, 0.440864, 0, -0.440864, 0.897574, 0, 7.11672, 18.8786)
 keep_aspect = 0
 script = ExtResource("1_ah6b6")
 

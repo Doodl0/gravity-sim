@@ -10,11 +10,6 @@ func _ready() -> void:
 	mass_edit.get_line_edit().context_menu_enabled = false;
 	radius_edit.get_line_edit().context_menu_enabled = false;
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT:		
 		var gravity_object = preload("res://scenes/2D/gravity_object_2d.tscn").instantiate()
